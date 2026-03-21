@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Britany Walker | IT Support & Cybersecurity</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f7fb;
+      color: #1f2937;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      margin: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0f172a;
+      border-bottom: 3px solid #2563eb;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .about-box,
+    .contact-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .skill {
+      background: #dbeafe;
+      color: #1e3a8a;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .project-card p {
+      margin-bottom: 14px;
+      color: #374151;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 8px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0f172a;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Britany Walker</h1>
+    <p>
+      IT Support & Cybersecurity professional with hands-on experience building support tools,
+      troubleshooting technical issues, and working on security-focused projects.
+    </p>
+    <a class="btn" href="https://github.com/Bwalkzz31/britany-walker-resume" target="_blank">View Resume</a>
+    <a class="btn" href="https://github.com/Bwalkzz31" target="_blank">GitHub Profile</a>
+  </header>
+
+  <div class="container">
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-box">
+        <p>
+          I am an aspiring IT Support and Cybersecurity professional with experience creating hands-on technical projects
+          that reflect real-world support and security workflows. My work includes ticketing systems, code review tools,
+          and campus security risk assessment projects. I enjoy solving technical problems, learning new tools, and helping
+          users succeed in fast-paced environments.
+        </p>
+
+        <div class="skills-list">
+          <span class="skill">IT Support</span>
+          <span class="skill">Troubleshooting</span>
+          <span class="skill">Ticketing Systems</span>
+          <span class="skill">Cybersecurity</span>
+          <span class="skill">Risk Assessment</span>
+          <span class="skill">AWS</span>
+          <span class="skill">Python</span>
+          <span class="skill">Flask</span>
+          <span class="skill">HTML</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>IT Support Ticket System</h3>
+          <p>
+            A web-based ticketing system designed to simulate real IT support workflows. This project demonstrates
+            ticket submission, issue tracking, and support organization.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Bwalkzz31/it-support-ticket-system" target="_blank">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Code Review Dashboard</h3>
+          <p>
+            A Flask-based code review and issue tracking application that allows users to submit code, log issues,
+            assign severity levels, and review results through a dashboard.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Bwalkzz31/code-review-dashboard" target="_blank">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Campus Security Project</h3>
+          <p>
+            A security-focused project centered on campus camera systems and risk assessment documentation.
+            This project highlights security awareness, planning, and analysis skills.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Bwalkzz31/Campus-Security-Project-" target="_blank">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Resume Repository</h3>
+          <p>
+            A GitHub repository containing my professional resume for IT Support, Help Desk, and Information
+            Technology opportunities.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Bwalkzz31/britany-walker-resume" target="_blank">View Resume Repo</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p><strong>Name:</strong> Britany Walker</p>
+        <p><strong>Location:</strong> Lexington, KY</p>
+        <p><strong>Email:</strong> b.walker.itm@gmail.com</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Bwalkzz31" target="_blank">github.com/Bwalkzz31</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Britany Walker | IT Support & Cybersecurity Portfolio</p>
+  </footer>
+
+</body>
+</html>
