@@ -31,4 +31,4 @@ To navigate the portfolio, use the menu at the top of the page. The main section
 - **Link to Project:** [Live Demo](#) or [GitHub Repository](#)
 
 ## Contact Information
-If you have any questions or would like to reach out, feel free to contact me at: [your_email@example.com]
+If you have any questions or would like to reach out, feel free to contact me at: [b.walker.itm@gmail.com]
