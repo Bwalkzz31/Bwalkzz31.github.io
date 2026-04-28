@@ -1,398 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Hub — Bwalkzz31</title>
-
     <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #0a0a0a;
-            color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+      :root {
+        --bg: #050509;
+        --card-bg: #11111a;
+        --accent: #ff4da6;
+        --accent-soft: #ff9ad0;
+        --text-main: #f5f5f7;
+        --text-muted: #a1a1b5;
+        --border-subtle: #262637;
+      }
 
-        a {
-            color: #ff4da6;
-            text-decoration: none;
-            transition: 0.2s ease;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        a:hover {
-            text-shadow: 0 0 8px #ff4da6;
-        }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: radial-gradient(circle at top, #1a1024 0, #050509 55%);
+        color: var(--text-main);
+        scroll-behavior: smooth;
+      }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #000;
-            padding: 15px 0;
-            border-bottom: 2px solid #ff4da6;
-            box-shadow: 0 0 15px #ff4da6;
-            z-index: 1000;
-        }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 0;
-            padding: 0;
-        }
+      a:hover {
+        text-shadow: 0 0 8px var(--accent);
+      }
 
-        nav a {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
+      /* NAVBAR */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(5, 5, 9, 0.96);
+        backdrop-filter: blur(10px);
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-subtle);
+        z-index: 1000;
+      }
 
-        .hero {
-            text-align: center;
-            padding: 160px 20px 100px;
-            background: linear-gradient(to bottom, #000, #0a0a0a);
-        }
+      .nav-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-        .hero h1 {
-            font-size: 3rem;
-            color: #ff4da6;
-            text-shadow: 0 0 15px #ff4da6;
-            margin-bottom: 10px;
-        }
+      .nav-left {
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent-soft);
+        font-size: 0.85rem;
+      }
 
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
+      .nav-links a {
+        margin-left: 18px;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
 
-        .resume-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #ff4da6;
-            border: 2px solid #ff4da6;
-            border-radius: 8px;
-            text-shadow: 0 0 8px #ff4da6;
-            box-shadow: 0 0 12px rgba(255, 77, 166, 0.5);
-            transition: 0.25s ease;
-        }
+      .nav-links a:hover {
+        color: var(--accent-soft);
+      }
 
-        .resume-btn:hover {
-            background: #ff4da6;
-            color: #000;
-            box-shadow: 0 0 20px #ff4da6;
-        }
+      /* LAYOUT */
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 96px 16px 48px;
+      }
 
-        .section {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+      section {
+        margin-bottom: 64px;
+      }
 
-        h2 {
-            font-size: 1.8rem;
-            border-left: 5px solid #ff4da6;
-            padding-left: 12px;
-            margin-bottom: 25px;
-            text-shadow: 0 0 8px #ff4da6;
-        }
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 12px;
+      }
 
-        .neon-border {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-        }
+      h2 {
+        font-size: 1.6rem;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+      }
 
-        .neon-border::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            border: 2px solid #ff4da6;
-            border-radius: 12px;
-            animation: neonGlow 2.5s linear infinite;
-        }
+      p {
+        margin: 0 0 10px;
+        color: var(--text-muted);
+      }
 
-        @keyframes neonGlow {
-            0% { box-shadow: 0 0 10px #ff4da6; }
-            50% { box-shadow: 0 0 25px #ff4da6; }
-            100% { box-shadow: 0 0 10px #ff4da6; }
-        }
+      /* HERO */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+      .hero-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--accent);
+        text-shadow: 0 0 18px rgba(255, 77, 166, 0.4);
+      }
 
-        .project {
-            background: #111;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #ff4da6;
-            box-shadow: 0 0 12px rgba(255, 77, 166, 0.4);
-            transition: 0.25s ease;
-        }
+      .hero-subtitle {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--text-muted);
+      }
 
-        .project:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 18px rgba(255, 77, 166, 0.7);
-        }
+      .hero-text {
+        max-width: 640px;
+      }
 
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #ff4da6;
-            text-shadow: 0 0 6px #ff4da6;
-            margin-bottom: 8px;
-        }
+      .hero-actions {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
 
-        .project-meta {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
+      .btn {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--accent);
+        background: linear-gradient(90deg, #ff4da6, #ff7ac4);
+        color: #050509;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
 
-        .badge-row {
-            margin: 8px 0 12px;
-        }
+      .btn-outline {
+        background: transparent;
+        color: var(--accent-soft);
+        border-color: var(--border-subtle);
+      }
 
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            margin: 2px 4px 2px 0;
-            border-radius: 999px;
-            border: 1px solid #ff4da6;
-            font-size: 0.8rem;
-            text-shadow: 0 0 4px #ff4da6;
-        }
+      .btn-outline:hover {
+        border-color: var(--accent);
+      }
 
-        .project-actions {
-            margin-top: 10px;
-        }
+      /* TECH STACK */
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
 
-        .btn-link {
-            display: inline-block;
-            padding: 6px 12px;
-            margin-right: 8px;
-            border-radius: 6px;
-            border: 1px solid #ff4da6;
-            font-size: 0.85rem;
-            text-shadow: 0 0 4px #ff4da6;
-        }
+      .tech-card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 14px 16px;
+        border: 1px solid var(--border-subtle);
+      }
 
-        .btn-link:hover {
-            background: #ff4da6;
-            color: #000;
-            box-shadow: 0 0 12px #ff4da6;
-        }
+      .tech-card h3 {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent-soft);
+        margin-bottom: 8px;
+      }
 
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #ff4da6;
-            color: #000;
-            padding: 12px 18px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 15px #ff4da6;
-            transition: 0.25s ease;
-            display: none;
-            z-index: 999;
-        }
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
 
-        #backToTop:hover {
-            box-shadow: 0 0 25px #ff4da6;
-        }
+      .tech-tags span {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: #1a1a26;
+        border: 1px solid #2a2a3a;
+      }
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            background: #000;
-            border-top: 2px solid #ff4da6;
-            box-shadow: 0 0 20px #ff4da6;
+      /* PROJECTS */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .project-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 16px 16px 18px;
+        border: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .project-card h3 {
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: var(--accent-soft);
+      }
+
+      .project-card .tech {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .project-card .desc {
+        font-size: 0.9rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 4px 0 6px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tags li {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: #181824;
+        border: 1px solid #2b2b3b;
+      }
+
+      .project-card .btn {
+        align-self: flex-start;
+        margin-top: 4px;
+        font-size: 0.8rem;
+      }
+
+      .update {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+
+      /* CONTACT + FOOTER */
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .contact-links a {
+        font-size: 0.9rem;
+      }
+
+      .top-link {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #11111a;
+        border: 1px solid var(--accent);
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 640px) {
+        .hero-title {
+          font-size: 2rem;
         }
+      }
     </style>
-</head>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <div class="nav-left">bwalkzz31 • portfolio</div>
+        <div class="nav-links">
+          <a href="#about">About Me</a>
+          <a href="#tech">Tech Stack</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
 
-<body>
-
-<nav>
-    <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#tech">Tech Stack</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<div class="hero neon-border">
-    <h1>Britany Walker</h1>
-    <p>Software Developer • Full‑Stack • Data Tooling • Security</p>
-
-    <a class="resume-btn" 
-       href="https://1drv.ms/w/c/df46f35ac302028d/IQBQuhZUONMaQ4neUTFYLfbLAaYi7p3qwX0stFhaGVzezp0?e=rXSlWO" 
-       target="_blank">
-       View Resume
-    </a>
-</div>
-
-<div class="section" id="about">
-    <h2>About Me</h2>
-
-    <div class="about-box neon-border" style="padding: 25px; background:#111; border-radius:12px; margin-top:20px;">
-        <p>
-            Hi, I’m <strong>Britany Walker</strong>, a graduate with a Bachelor of Science in Information Technology. 
-            I’m originally from Lexington, Kentucky, and I’m a proud mom to a 9-year-old son who motivates me to keep growing 
-            and pushing forward every day.
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div>
+          <div class="hero-title">Britany Walker</div>
+          <div class="hero-subtitle">
+            Software Developer • Full‑Stack • Data Tooling • Security
+          </div>
+        </div>
+        <p class="hero-text">
+          I’m a full‑stack developer and IT professional from Lexington, KY,
+          focused on building secure, practical systems that actually solve
+          problems—across web apps, data tooling, and cloud infrastructure.
         </p>
+        <div class="hero-actions">
+          <a
+            href="https://bwalkzz31.github.io/Portfolio-Documentation"
+            class="btn"
+            target="_blank"
+            >View Technical Documentation</a
+          >
+          <a href="#projects" class="btn btn-outline">Skip to Projects</a>
+        </div>
+      </section>
 
+      <!-- ABOUT -->
+      <section id="about">
+        <h2>About Me</h2>
         <p>
-            I’m passionate about technology, continuous learning, and solving real-world problems. Outside of tech, 
-            I enjoy spending time in nature, exploring new places, and learning about traditional medicine. 
-            I’m known for being driven, ambitious, and bringing a sense of humor into everything I do.
+          I recently completed my Bachelor of Science in Information Technology
+          and specialize in full‑stack development, API integrations, and
+          security‑minded architecture. I enjoy continuous learning, solving
+          real‑world problems, and building systems that are both reliable and
+          understandable.
         </p>
-
         <p>
-            I thrive on challenges, set clear goals, and stay focused on improving both personally and professionally. 
-            I’m always looking for opportunities to grow, build, and make a meaningful impact.
+          Outside of tech, I recharge by spending time in nature, exploring new
+          places, and learning about traditional approaches to health and
+          personal growth. I’m driven, curious, and I like to bring a sense of
+          humor into serious work.
         </p>
-    </div>
-</div>
+      </section>
 
-<div class="section" id="tech">
-    <h2>Tech Stack</h2>
-    <p><strong>Frontend:</strong> HTML/CSS, React, TypeScript</p>
-    <p><strong>Backend:</strong> Node.js, Express, Python (data tooling)</p>
-    <p><strong>Datastores:</strong> PostgreSQL, SQLite</p>
-    <p><strong>Tools:</strong> Git, GitHub Actions, Docker</p>
-</div>
+      <!-- TECH STACK -->
+      <section id="tech">
+        <h2>Tech Stack</h2>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Frontend</h3>
+            <div class="tech-tags">
+              <span>HTML/CSS</span>
+              <span>React</span>
+              <span>TypeScript</span>
+            </div>
+          </div>
+          <div class="tech-card">
+            <h3>Backend</h3>
+            <div class="tech-tags">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>Python</span>
+            </div>
+          </div>
+          <div class="tech-card">
+            <h3>Datastores</h3>
+            <div class="tech-tags">
+              <span>PostgreSQL</span>
+              <span>SQLite</span>
+            </div>
+          </div>
+          <div class="tech-card">
+            <h3>Tools</h3>
+            <div class="tech-tags">
+              <span>Git</span>
+              <span>GitHub Actions</span>
+              <span>Docker</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<div class="section" id="projects">
-    <h2>Projects</h2>
-    <p style="opacity:0.85; margin-bottom:20px;">
-        These projects are pulled live from my GitHub profile and represent my core work in IT, security, and full‑stack development.
-    </p>
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2>Projects</h2>
 
-    <div id="project-grid" class="project-grid"></div>
+        <div class="projects-grid">
+          <!-- Campus Security -->
+          <div class="project-card">
+            <h3>campus security risk assessment</h3>
+            <p class="tech">Tech • Updated 4/27/2026</p>
+            <p class="desc">
+              A campus security camera project with full risk assessment
+              documentation and structured mitigation planning.
+            </p>
+            <ul class="tags">
+              <li>Risk Assessment</li>
+              <li>Security</li>
+              <li>Excel</li>
+            </ul>
+            <a
+              href="https://github.com/Bwalkzz31/campus-security-risk-assessment"
+              target="_blank"
+              class="btn"
+              >View Code</a
+            >
+          </div>
 
-    <p id="projects-fallback" style="margin-top:20px; opacity:0.7; display:none;">
-        If projects are not loading, you can view them directly on 
-        <a href="https://github.com/Bwalkzz31" target="_blank">my GitHub profile</a>.
-    </p>
-</div>
+          <!-- IT Support Ticket System -->
+          <div class="project-card">
+            <h3>it support ticket system</h3>
+            <p class="tech">HTML • Updated 4/27/2026</p>
+            <p class="desc">
+              A web‑based IT support ticket system that simulates real‑world
+              help desk workflows and prioritization.
+            </p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>IT Support</li>
+            </ul>
+            <a
+              href="https://github.com/Bwalkzz31/it-support-ticket-system"
+              target="_blank"
+              class="btn"
+              >View Code</a
+            >
+          </div>
 
-<div id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    ↑ Top
-</div>
+          <!-- AWS Secure 3‑Tier VPC -->
+          <div class="project-card">
+            <h3>aws secure 3tier vpc</h3>
+            <p class="tech">Tech • Updated 4/27/2026</p>
+            <p class="desc">
+              A secure AWS 3‑tier architecture with SSH hardening, network
+              segmentation, and least‑privilege access controls.
+            </p>
+            <ul class="tags">
+              <li>AWS</li>
+              <li>VPC</li>
+              <li>Security</li>
+            </ul>
+            <a
+              href="https://github.com/Bwalkzz31/aws-secure-3tier-vpc"
+              target="_blank"
+              class="btn"
+              >View Code</a
+            >
+          </div>
 
-<script>
-    window.addEventListener("scroll", () => {
-        const btn = document.getElementById("backToTop");
-        btn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
+          <!-- Electronics Design Portfolio -->
+          <div class="project-card">
+            <h3>electronics design portfolio</h3>
+            <p class="tech">Tech • Updated 4/04/2026</p>
+            <p class="desc">
+              A collection of electronics and logic design work, with simulation
+              and PCB‑style thinking.
+            </p>
+            <ul class="tags">
+              <li>Electronics</li>
+              <li>Logic Design</li>
+              <li>Simulation</li>
+            </ul>
+            <a
+              href="https://github.com/Bwalkzz31/electronics-design-portfolio"
+              target="_blank"
+              class="btn"
+              >View Code</a
+            >
+          </div>
 
-    const projectsConfig = [
-        { owner: "Bwalkzz31", repo: "campus-security-risk-assessment", tags: ["Risk Assessment", "Security", "Excel"] },
-        { owner: "Bwalkzz31", repo: "it-support-ticket-system", tags: ["HTML", "CSS", "IT Support"] },
-        { owner: "Bwalkzz31", repo: "aws-secure-3tier-vpc", tags: ["AWS", "VPC", "Security"] },
-        { owner: "Bwalkzz31", repo: "api-integration-hub", tags: ["Flask", "APIs", "Webhooks"] },
-        { owner: "Bwalkzz31", repo: "electronics-design-portfolio", tags: ["Electronics", "Logic Design", "Simulation"] },
-        { owner: "Bwalkz31", repo: "code--review---dashboard", tags: ["Flask", "Python", "Code Review"] },
-        { owner: "Bwalkz31", repo: "taskflow-fullstack", tags: ["React", "TypeScript", "Node.js", "PostgreSQL"] }
-    ];
+          <!-- TaskFlow — NEW -->
+          <div class="project-card">
+            <h3>taskflow — full‑stack task manager</h3>
+            <p class="tech">Tech • Updated 4/28/2026</p>
+            <p class="desc">
+              A full‑stack task management application with authentication,
+              priority levels, and a responsive UI built with React, TypeScript,
+              Node.js, and PostgreSQL.
+            </p>
+            <ul class="tags">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <a
+              href="https://github.com/Bwalkzz31/taskflow-fullstack"
+              target="_blank"
+              class="btn"
+              >View Code</a
+            >
+          </div>
 
-    const projectGrid = document.getElementById("project-grid");
-    const fallbackText = document.getElementById("projects-fallback");
+          <!-- Code Review Dashboard — NEW -->
+          <div class="project-card">
+            <h3>code review dashboard</h3>
+            <p class="tech">Tech • Updated 4/28/2026</p>
+            <p class="desc">
+              A Flask‑based dashboard for logging code review issues with
+              severity levels, suggested fixes, and a live overview of review
+              activity.
+            </p>
+            <ul class="tags">
+              <li>Flask</li>
+              <li>Python</li>
+              <li>Dashboard</li>
+              <li>DevOps</li>
+            </ul>
+            <a
+              href="https://github.com/Bwalkzz31/code---review---dashboard"
+              target="_blank"
+              class="btn"
+              >View Code</a
+            >
+          </div>
+        </div>
+      </section>
 
-    async function loadProjects() {
-        try {
-            const cards = await Promise.all(
-                projectsConfig.map(async (p) => {
-                    const res = await fetch(`https://api.github.com/repos/${p.owner}/${p.repo}`);
-                    if (!res.ok) return null;
-                    const data = await res.json();
-                    return { config: p, data };
-                })
-            );
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>If you’d like to connect, collaborate, or talk about roles:</p>
+        <div class="contact-links">
+          <a href="mailto:b.walker.itm@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/bwalker21" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/Bwalkzz31" target="_blank">GitHub</a>
+        </div>
+      </section>
+    </main>
 
-            const validCards = cards.filter(c => c !== null);
-
-            if (validCards.length === 0) {
-                fallbackText.style.display = "block";
-                return;
-            }
-
-            validCards.forEach(({ config, data }) => {
-                const card = document.createElement("div");
-                card.className = "project";
-
-                const title = document.createElement("div");
-                title.className = "project-title";
-                title.textContent = data.name.replace(/-/g, " ");
-
-                const meta = document.createElement("div");
-                meta.className = "project-meta";
-                meta.textContent = `${data.language || "Tech"} • Updated ${new Date(data.updated_at).toLocaleDateString()}`;
-
-                const desc = document.createElement("p");
-                desc.textContent = data.description || "Project description coming soon.";
-
-                const badgeRow = document.createElement("div");
-                badgeRow.className = "badge-row";
-                (config.tags || []).forEach(tag => {
-                    const b = document.createElement("span");
-                    b.className = "badge";
-                    b.textContent = tag;
-                    badgeRow.appendChild(b);
-                });
-
-                const actions = document.createElement("div");
-                actions.className = "project-actions";
-
-                const codeLink = document.createElement("a");
-                codeLink.className = "btn-link";
-                codeLink.href = data.html_url;
-                codeLink.target = "_blank";
-                codeLink.textContent = "View Code";
-
-                actions.appendChild(codeLink);
-
-                card.appendChild(title);
-                card.appendChild(meta);
-                card.appendChild(desc);
-                card.appendChild(badgeRow);
-                card.appendChild(actions);
-
-                projectGrid.appendChild(card);
-            });
-        } catch (e) {
-            console.error(e);
-            fallbackText.style.display = "block";
-        }
-    }
-
-    loadProjects();
-</script>
-
-<footer id="contact">
-    <p>Get in touch:</p>
-    <p>
-        <a href="mailto:b.walker.itm@gmail.com">Email</a> • 
-        <a href="https://www.linkedin.com/in/britany-walker-935389246/" target="_blank">LinkedIn</a> • 
-        <a href="https://github.com/Bwalkzz31" target="_blank">GitHub</a>
-    </p>
-</footer>
-
-</body>
+    <a href="#top" class="top-link">↑ Top</a>
+  </body>
 </html>
