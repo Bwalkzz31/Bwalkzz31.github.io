@@ -38,7 +38,6 @@
         text-shadow: 0 0 8px var(--accent);
       }
 
-      /* NAVBAR */
       nav {
         position: fixed;
         top: 0;
@@ -77,7 +76,6 @@
         color: var(--accent-soft);
       }
 
-      /* LAYOUT */
       main {
         max-width: 960px;
         margin: 0 auto;
@@ -106,7 +104,6 @@
         color: var(--text-muted);
       }
 
-      /* HERO */
       .hero {
         display: flex;
         flex-direction: column;
@@ -160,7 +157,6 @@
         border-color: var(--accent);
       }
 
-      /* TECH STACK */
       .tech-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -196,7 +192,6 @@
         border: 1px solid #2a2a3a;
       }
 
-      /* PROJECTS */
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -251,13 +246,6 @@
         font-size: 0.8rem;
       }
 
-      .update {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-top: 2px;
-      }
-
-      /* CONTACT + FOOTER */
       .contact-links {
         display: flex;
         flex-wrap: wrap;
@@ -287,6 +275,7 @@
       }
     </style>
   </head>
+
   <body>
     <nav>
       <div class="nav-inner">
@@ -301,7 +290,6 @@
     </nav>
 
     <main>
-      <!-- HERO -->
       <section class="hero" id="top">
         <div>
           <div class="hero-title">Britany Walker</div>
@@ -309,11 +297,14 @@
             Software Developer • QA • AI Data Labeling • LLM Evaluation
           </div>
         </div>
+
         <p class="hero-text">
-          I’m a full‑stack developer and IT professional from Lexington, KY,
-          focused on building secure, practical systems that actually solve
-          problems—across web apps, data tooling, and cloud infrastructure.
+          I’m a full-stack developer and IT professional from Lexington, KY,
+          focused on building secure, practical systems that solve real-world
+          problems across web apps, QA workflows, AI evaluation, data tooling,
+          and cloud infrastructure.
         </p>
+
         <div class="hero-actions">
           <a
             href="https://bwalkzz31.github.io/Portfolio-Documentation"
@@ -325,16 +316,23 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
       <section id="about">
         <h2>About Me</h2>
+
         <p>
           I recently completed my Bachelor of Science in Information Technology
-          and specialize in full‑stack development, API integrations, and
-          security‑minded architecture. I enjoy continuous learning, solving
-          real‑world problems, and building systems that are both reliable and
+          and specialize in full-stack development, API integrations, and
+          security-minded architecture. I enjoy continuous learning, solving
+          real-world problems, and building systems that are both reliable and
           understandable.
         </p>
+
+        <p>
+          I also specialize in AI data labeling and QA evaluation, focusing on
+          improving system accuracy through structured testing, annotation, and
+          error analysis.
+        </p>
+
         <p>
           Outside of tech, I recharge by spending time in nature, exploring new
           places, and learning about traditional approaches to health and
@@ -343,9 +341,9 @@
         </p>
       </section>
 
-      <!-- TECH STACK -->
       <section id="tech">
         <h2>Tech Stack</h2>
+
         <div class="tech-grid">
           <div class="tech-card">
             <h3>Frontend</h3>
@@ -355,6 +353,7 @@
               <span>TypeScript</span>
             </div>
           </div>
+
           <div class="tech-card">
             <h3>Backend</h3>
             <div class="tech-tags">
@@ -363,6 +362,17 @@
               <span>Python</span>
             </div>
           </div>
+
+          <div class="tech-card">
+            <h3>QA & AI</h3>
+            <div class="tech-tags">
+              <span>Data Labeling</span>
+              <span>LLM Evaluation</span>
+              <span>QA Testing</span>
+              <span>Error Analysis</span>
+            </div>
+          </div>
+
           <div class="tech-card">
             <h3>Datastores</h3>
             <div class="tech-tags">
@@ -370,6 +380,7 @@
               <span>SQLite</span>
             </div>
           </div>
+
           <div class="tech-card">
             <h3>Tools</h3>
             <div class="tech-tags">
@@ -381,14 +392,34 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
       <section id="projects">
         <h2>Projects</h2>
 
         <div class="projects-grid">
-          <!-- Campus Security -->
           <div class="project-card">
-            <h3>campus security risk assessment</h3>
+            <h3>AI QA & Data Labeling Evaluation</h3>
+            <p class="tech">AI • QA • Updated 5/5/2026</p>
+            <p class="desc">
+              A structured QA and data labeling sample demonstrating text
+              classification, error detection, and evaluation of AI-generated
+              outputs with clear reasoning.
+            </p>
+            <ul class="tags">
+              <li>AI</li>
+              <li>QA</li>
+              <li>Data Labeling</li>
+              <li>NLP</li>
+            </ul>
+            <a
+              href="https://docs.google.com/document/d/17JXRi2JNG3mJ9ILQBsKCWe3PJ0ZKCwWpjTH9bPwe5Qs"
+              target="_blank"
+              class="btn"
+              >View Sample</a
+            >
+          </div>
+
+          <div class="project-card">
+            <h3>Campus Security Risk Assessment</h3>
             <p class="tech">Tech • Updated 4/27/2026</p>
             <p class="desc">
               A campus security camera project with full risk assessment
@@ -407,12 +438,11 @@
             >
           </div>
 
-          <!-- IT Support Ticket System -->
           <div class="project-card">
-            <h3>it support ticket system</h3>
+            <h3>IT Support Ticket System</h3>
             <p class="tech">HTML • Updated 4/27/2026</p>
             <p class="desc">
-              A web‑based IT support ticket system that simulates real‑world
+              A web-based IT support ticket system that simulates real-world
               help desk workflows and prioritization.
             </p>
             <ul class="tags">
@@ -428,13 +458,12 @@
             >
           </div>
 
-          <!-- AWS Secure 3‑Tier VPC -->
           <div class="project-card">
-            <h3>aws secure 3tier vpc</h3>
+            <h3>AWS Secure 3-Tier VPC</h3>
             <p class="tech">Tech • Updated 4/27/2026</p>
             <p class="desc">
-              A secure AWS 3‑tier architecture with SSH hardening, network
-              segmentation, and least‑privilege access controls.
+              A secure AWS 3-tier architecture with SSH hardening, network
+              segmentation, and least-privilege access controls.
             </p>
             <ul class="tags">
               <li>AWS</li>
@@ -449,13 +478,12 @@
             >
           </div>
 
-          <!-- Electronics Design Portfolio -->
           <div class="project-card">
-            <h3>electronics design portfolio</h3>
+            <h3>Electronics Design Portfolio</h3>
             <p class="tech">Tech • Updated 4/04/2026</p>
             <p class="desc">
               A collection of electronics and logic design work, with simulation
-              and PCB‑style thinking.
+              and PCB-style thinking.
             </p>
             <ul class="tags">
               <li>Electronics</li>
@@ -470,12 +498,11 @@
             >
           </div>
 
-          <!-- TaskFlow — NEW -->
           <div class="project-card">
-            <h3>taskflow — full‑stack task manager</h3>
+            <h3>TaskFlow — Full-Stack Task Manager</h3>
             <p class="tech">Tech • Updated 4/28/2026</p>
             <p class="desc">
-              A full‑stack task management application with authentication,
+              A full-stack task management application with authentication,
               priority levels, and a responsive UI built with React, TypeScript,
               Node.js, and PostgreSQL.
             </p>
@@ -493,12 +520,11 @@
             >
           </div>
 
-          <!-- Code Review Dashboard — NEW -->
           <div class="project-card">
-            <h3>code review dashboard</h3>
+            <h3>Code Review Dashboard</h3>
             <p class="tech">Tech • Updated 4/28/2026</p>
             <p class="desc">
-              A Flask‑based dashboard for logging code review issues with
+              A Flask-based dashboard for logging code review issues with
               severity levels, suggested fixes, and a live overview of review
               activity.
             </p>
@@ -518,7 +544,6 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact">
         <h2>Contact</h2>
         <p>If you’d like to connect, collaborate, or talk about roles:</p>
