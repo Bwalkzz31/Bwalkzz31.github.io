@@ -7,6 +7,8 @@ Welcome to my portfolio! This document provides comprehensive information on how
 # Britany Walker
 ### AI Trainer Expert & IT Professional
 
+**Focus Areas:** QA Testing • AI Data Labeling • LLM Evaluation • Full-Stack Development
+
 [![Portfolio](https://img.shields.io/badge/Portfolio-bwalkzz31.github.io-2E75B6?style=flat-square&logo=github)](https://bwalkzz31.github.io)
 [![Email](https://img.shields.io/badge/Email-b.walker.itm@gmail.com-D85A30?style=flat-square&logo=gmail)](mailto:b.walker.itm@gmail.com)
 [![Location](https://img.shields.io/badge/Location-Lexington,_KY-1D9E75?style=flat-square)](#)
@@ -21,6 +23,8 @@ I'm an AI Trainer Expert and IT Professional focused on optimizing frontier AI m
 
 Currently pursuing a **B.S. in IT Management** at the University of the Cumberlands and working as an AI Trainer Expert at Handshake AI, where I evaluate model outputs, engineer advanced prompts, and collaborate with AI Research Engineers to fine-tune next-generation models.
 
+I also specialize in **AI data labeling and QA evaluation**, focusing on improving system accuracy through structured testing, annotation, and error analysis.
+
 ---
 
 ## Navigation
@@ -32,6 +36,20 @@ Currently pursuing a **B.S. in IT Management** at the University of the Cumberla
 | [Experience](#experience) | Professional background |
 | [Education](#education) | Academic credentials |
 | [Contact](#contact) | How to reach me |
+
+---
+
+## 🤖 AI QA & Data Labeling Evaluation
+
+A hands-on sample demonstrating how I classify, evaluate, and improve AI-generated outputs using QA methodologies.
+
+**Highlights:**
+- Text classification across IT and support scenarios
+- Error detection and hallucination identification
+- Structured QA feedback and reasoning
+- Consistency validation across labeled data
+
+🔗 View Full Sample: https://PASTE-YOUR-GOOGLE-DOC-LINK-HERE
 
 ---
 
@@ -125,8 +143,7 @@ A portfolio of electronics design projects built using industry-standard PCB des
 
 ---
 
-
-**AWS EC2 · VPC · SSH · Network Segmentation**
+### AWS EC2 · VPC · SSH · Network Segmentation
 
 A secure cloud architecture design applying SSH hardening, network segmentation, and least-privilege access across web, application, and database tiers.
 
@@ -172,8 +189,8 @@ A secure cloud architecture design applying SSH hardening, network segmentation,
 
 ## Education
 
-**Bachelor of Science in IT Management**
-University of the Cumberlands | Graduated December 12, 2025
+**Bachelor of Science in IT Management**  
+University of the Cumberlands | Graduated December 12, 2025  
 
 ---
 
@@ -189,5 +206,5 @@ University of the Cumberlands | Graduated December 12, 2025
 ---
 
 <div align="center">
-<sub>Open to AI training, IT, and full-stack development opportunities</sub>
+<sub>Open to AI training, QA, data labeling, and full-stack development opportunities</sub>
 </div>
