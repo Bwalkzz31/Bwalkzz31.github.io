@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+html = r'''<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Hub — Bwalkzz31</title>
+
+    <meta
+      name="description"
+      content="Britany Walker's portfolio featuring IT support, data analytics, AI quality evaluation, technical documentation, cloud architecture, and software development projects."
+    />
+
+    <title>Britany Walker | IT, Data Analytics & AI Quality Portfolio</title>
+
     <style>
       :root {
         --bg: #050509;
@@ -19,13 +26,16 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
         background: radial-gradient(circle at top, #1a1024 0, #050509 55%);
         color: var(--text-main);
-        scroll-behavior: smooth;
       }
 
       a {
@@ -66,6 +76,12 @@
         font-size: 0.85rem;
       }
 
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
       .nav-links a {
         margin-left: 18px;
         font-size: 0.9rem;
@@ -84,6 +100,7 @@
 
       section {
         margin-bottom: 64px;
+        scroll-margin-top: 78px;
       }
 
       h1,
@@ -102,6 +119,7 @@
       p {
         margin: 0 0 10px;
         color: var(--text-muted);
+        line-height: 1.55;
       }
 
       .hero {
@@ -126,7 +144,7 @@
       }
 
       .hero-text {
-        max-width: 640px;
+        max-width: 720px;
       }
 
       .hero-actions {
@@ -145,6 +163,10 @@
         color: #050509;
         font-size: 0.9rem;
         font-weight: 600;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
       }
 
       .btn-outline {
@@ -208,6 +230,12 @@
         gap: 8px;
       }
 
+      .project-card:hover {
+        border-color: rgba(255, 77, 166, 0.55);
+        transform: translateY(-2px);
+        transition: 0.2s ease;
+      }
+
       .project-card h3 {
         font-size: 1rem;
         text-transform: capitalize;
@@ -242,15 +270,19 @@
 
       .project-card .btn {
         align-self: flex-start;
-        margin-top: 4px;
+        margin-top: auto;
         font-size: 0.8rem;
+      }
+
+      .contact-intro {
+        max-width: 720px;
       }
 
       .contact-links {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 8px;
+        margin-top: 12px;
       }
 
       .contact-links a {
@@ -268,18 +300,52 @@
         font-size: 0.8rem;
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 700px) {
+        .nav-inner {
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .nav-links a {
+          margin-left: 10px;
+          font-size: 0.8rem;
+        }
+
         .hero-title {
           font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 0.85rem;
+          line-height: 1.6;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .nav-left {
+          display: none;
+        }
+
+        .nav-inner {
+          justify-content: center;
+        }
+
+        .nav-links {
+          justify-content: center;
+        }
+
+        .nav-links a {
+          margin: 0 7px;
         }
       }
     </style>
   </head>
 
   <body>
-    <nav>
+    <nav aria-label="Main navigation">
       <div class="nav-inner">
         <div class="nav-left">bwalkzz31 • portfolio</div>
+
         <div class="nav-links">
           <a href="#about">About Me</a>
           <a href="#tech">Tech Stack</a>
@@ -292,27 +358,41 @@
     <main>
       <section class="hero" id="top">
         <div>
-          <div class="hero-title">Britany Walker</div>
+          <h1 class="hero-title">Britany Walker</h1>
+
           <div class="hero-subtitle">
-            Software Developer • QA • AI Data Labeling • LLM Evaluation
+            IT Support • Data Analytics • AI Quality Evaluation
           </div>
         </div>
 
         <p class="hero-text">
-          I’m a full-stack developer and IT professional from Lexington, KY,
-          focused on building secure, practical systems that solve real-world
-          problems across web apps, QA workflows, AI evaluation, data tooling,
-          and cloud infrastructure.
+          IT Management graduate with experience in AI model evaluation, help
+          desk workflows, data analytics, technical documentation, cloud
+          architecture, and full-stack application development. I build
+          practical technology solutions, analyze operational data, and
+          evaluate AI systems for accuracy, quality, and instruction following.
         </p>
 
         <div class="hero-actions">
+          <a href="#projects" class="btn">View Projects</a>
+
           <a
-            href="https://bwalkzz31.github.io/Portfolio-Documentation"
-            class="btn"
+            href="https://bwalkzz31.github.io/technical-documentation-portfolio"
+            class="btn btn-outline"
             target="_blank"
-            >View IT Documentation</a
+            rel="noopener noreferrer"
           >
-          <a href="#projects" class="btn btn-outline">Skip to Projects</a>
+            View IT Documentation
+          </a>
+
+          <!-- Upload a PDF named Britany_Walker_IT_Resume.pdf to this repository. -->
+          <a
+            href="Britany_Walker_IT_Resume.pdf"
+            class="btn btn-outline"
+            target="_blank"
+          >
+            Download Resume
+          </a>
         </div>
       </section>
 
@@ -320,24 +400,27 @@
         <h2>About Me</h2>
 
         <p>
-          I recently completed my Bachelor of Science in Information Technology
-          and specialize in full-stack development, API integrations, and
-          security-minded architecture. I enjoy continuous learning, solving
-          real-world problems, and building systems that are both reliable and
-          understandable.
+          I earned my Bachelor of Science in Information Technology Management
+          from the University of the Cumberlands in December 2025. My
+          experience includes IT support workflows, data analytics, AI model
+          evaluation, technical documentation, cloud architecture, and software
+          development.
         </p>
 
         <p>
-          I also specialize in AI data labeling and QA evaluation, focusing on
-          improving system accuracy through structured testing, annotation, and
-          error analysis.
+          Since 2023, I have worked as an independent AI Trainer and Model
+          Evaluator, reviewing AI-generated content for accuracy, clarity,
+          safety, relevance, and instruction following. I also build technical
+          portfolio projects that demonstrate practical skills in
+          troubleshooting, ticketing systems, data analysis, Python, SQL, AWS,
+          and full-stack development.
         </p>
 
         <p>
-          Outside of tech, I recharge by spending time in nature, exploring new
-          places, and learning about traditional approaches to health and
-          personal growth. I’m driven, curious, and I like to bring a sense of
-          humor into serious work.
+          My professional background also includes several years of experience
+          using digital systems, maintaining accurate records, protecting
+          sensitive information, following detailed procedures, and supporting
+          customers in fast-paced environments.
         </p>
       </section>
 
@@ -346,35 +429,55 @@
 
         <div class="tech-grid">
           <div class="tech-card">
-            <h3>Frontend</h3>
+            <h3>IT Support</h3>
             <div class="tech-tags">
-              <span>HTML/CSS</span>
-              <span>React</span>
-              <span>TypeScript</span>
+              <span>Troubleshooting</span>
+              <span>Ticketing Systems</span>
+              <span>Incident Tracking</span>
+              <span>SLA Analysis</span>
+              <span>Technical Documentation</span>
             </div>
           </div>
 
           <div class="tech-card">
-            <h3>Backend</h3>
+            <h3>Data Analytics</h3>
             <div class="tech-tags">
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>Python</span>
+              <span>Zerve</span>
+              <span>Data Cleaning</span>
+              <span>Exploratory Analysis</span>
+              <span>Summary Statistics</span>
+              <span>KPI Reporting</span>
+              <span>Data Visualization</span>
             </div>
           </div>
 
           <div class="tech-card">
             <h3>QA & AI</h3>
             <div class="tech-tags">
-              <span>Data Labeling</span>
-              <span>LLM Evaluation</span>
-              <span>QA Testing</span>
+              <span>AI Model Evaluation</span>
+              <span>Prompt Evaluation</span>
+              <span>Rubric-Based Review</span>
+              <span>Dataset Review</span>
+              <span>Quality Assurance</span>
               <span>Error Analysis</span>
             </div>
           </div>
 
           <div class="tech-card">
-            <h3>Datastores</h3>
+            <h3>Development</h3>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>Flask</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>Express</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <h3>Databases</h3>
             <div class="tech-tags">
               <span>PostgreSQL</span>
               <span>SQLite</span>
@@ -382,11 +485,16 @@
           </div>
 
           <div class="tech-card">
-            <h3>Tools</h3>
+            <h3>Cloud & Tools</h3>
             <div class="tech-tags">
+              <span>AWS</span>
+              <span>VPC</span>
+              <span>EC2</span>
               <span>Git</span>
-              <span>GitHub Actions</span>
-              <span>Docker</span>
+              <span>GitHub</span>
+              <span>VS Code</span>
+              <span>Render</span>
+              <span>Windows</span>
             </div>
           </div>
         </div>
@@ -396,167 +504,288 @@
         <h2>Projects</h2>
 
         <div class="projects-grid">
-          <div class="project-card">
-            <h3>AI QA & Data Labeling Evaluation</h3>
-            <p class="tech">AI • QA • Updated 5/5/2026</p>
-            <p class="desc">
-              A structured QA and data labeling sample demonstrating text
-              classification, error detection, and evaluation of AI-generated
-              outputs with clear reasoning.
-            </p>
-            <ul class="tags">
-              <li>AI</li>
-              <li>QA</li>
-              <li>Data Labeling</li>
-              <li>NLP</li>
-            </ul>
-            <a
-              href="https://docs.google.com/document/d/17JXRi2JNG3mJ9ILQBsKCWe3PJ0ZKCwWpjTH9bPwe5Qs"
-              target="_blank"
-              class="btn"
-              >View Sample</a
-            >
-          </div>
+          <article class="project-card">
+            <h3>IT Help Desk Ticket Performance Analysis</h3>
 
-          <div class="project-card">
-            <h3>Campus Security Risk Assessment</h3>
-            <p class="tech">Tech • Updated 4/27/2026</p>
-            <p class="desc">
-              A campus security camera project with full risk assessment
-              documentation and structured mitigation planning.
+            <p class="tech">
+              Zerve • Data Analytics • Completed July 2026
             </p>
-            <ul class="tags">
-              <li>Risk Assessment</li>
-              <li>Security</li>
-              <li>Excel</li>
-            </ul>
-            <a
-              href="https://github.com/Bwalkzz31/campus-security-risk-assessment"
-              target="_blank"
-              class="btn"
-              >View Code</a
-            >
-          </div>
 
-          <div class="project-card">
-            <h3>IT Support Ticket System</h3>
-            <p class="tech">HTML • Updated 4/27/2026</p>
             <p class="desc">
-              A web-based IT support ticket system that simulates real-world
-              help desk workflows and prioritization.
+              An end-to-end help desk analytics project using a structured
+              support-ticket dataset. Cleaned and validated data, generated
+              summary statistics, and created six visualizations covering
+              ticket categories, priority distribution, resolution time,
+              customer satisfaction, SLA performance, and monthly trends.
             </p>
+
             <ul class="tags">
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>Zerve</li>
+              <li>Data Cleaning</li>
+              <li>Data Analytics</li>
+              <li>SLA Analysis</li>
+              <li>Visualization</li>
+            </ul>
+
+            <!-- Replace this placeholder with your public Zerve project link. -->
+            <a
+              href="PASTE-YOUR-ZERVE-PROJECT-LINK-HERE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              View Project
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3>Full-Stack IT Support Ticketing System</h3>
+
+            <p class="tech">
+              Python • Flask • SQLite • HTML • CSS • 2026
+            </p>
+
+            <p class="desc">
+              A functional IT support application that tracks user issues,
+              priority levels, ticket status, and resolution workflows. Includes
+              dashboard metrics and rule-based troubleshooting suggestions for
+              common support problems.
+            </p>
+
+            <ul class="tags">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>SQLite</li>
               <li>IT Support</li>
+              <li>Ticketing</li>
             </ul>
+
             <a
               href="https://github.com/Bwalkzz31/it-support-ticket-system"
               target="_blank"
+              rel="noopener noreferrer"
               class="btn"
-              >View Code</a
             >
-          </div>
+              View Code
+            </a>
+          </article>
 
-          <div class="project-card">
-            <h3>AWS Secure 3-Tier VPC</h3>
-            <p class="tech">Tech • Updated 4/27/2026</p>
-            <p class="desc">
-              A secure AWS 3-tier architecture with SSH hardening, network
-              segmentation, and least-privilege access controls.
-            </p>
-            <ul class="tags">
-              <li>AWS</li>
-              <li>VPC</li>
-              <li>Security</li>
-            </ul>
-            <a
-              href="https://github.com/Bwalkzz31/aws-secure-3tier-vpc"
-              target="_blank"
-              class="btn"
-              >View Code</a
-            >
-          </div>
-
-          <div class="project-card">
-            <h3>Electronics Design Portfolio</h3>
-            <p class="tech">Tech • Updated 4/04/2026</p>
-            <p class="desc">
-              A collection of electronics and logic design work, with simulation
-              and PCB-style thinking.
-            </p>
-            <ul class="tags">
-              <li>Electronics</li>
-              <li>Logic Design</li>
-              <li>Simulation</li>
-            </ul>
-            <a
-              href="https://github.com/Bwalkzz31/electronics-design-portfolio"
-              target="_blank"
-              class="btn"
-              >View Code</a
-            >
-          </div>
-
-          <div class="project-card">
+          <article class="project-card">
             <h3>TaskFlow — Full-Stack Task Manager</h3>
-            <p class="tech">Tech • Updated 4/28/2026</p>
-            <p class="desc">
-              A full-stack task management application with authentication,
-              priority levels, and a responsive UI built with React, TypeScript,
-              Node.js, and PostgreSQL.
+
+            <p class="tech">
+              React • TypeScript • Node.js • Express • PostgreSQL • 2026
             </p>
+
+            <p class="desc">
+              A full-stack task management application with user
+              authentication, protected routes, task status workflows,
+              priorities, due dates, filtering, and persistent sessions.
+            </p>
+
             <ul class="tags">
               <li>React</li>
               <li>TypeScript</li>
               <li>Node.js</li>
               <li>PostgreSQL</li>
+              <li>JWT</li>
             </ul>
+
             <a
               href="https://github.com/Bwalkzz31/taskflow-fullstack"
               target="_blank"
+              rel="noopener noreferrer"
               class="btn"
-              >View Code</a
             >
-          </div>
+              View Code
+            </a>
+          </article>
 
-          <div class="project-card">
-            <h3>Code Review Dashboard</h3>
-            <p class="tech">Tech • Updated 4/28/2026</p>
-            <p class="desc">
-              A Flask-based dashboard for logging code review issues with
-              severity levels, suggested fixes, and a live overview of review
-              activity.
+          <article class="project-card">
+            <h3>AWS Secure 3-Tier Architecture</h3>
+
+            <p class="tech">
+              AWS • VPC • EC2 • Subnets • Security Groups • 2026
             </p>
+
+            <p class="desc">
+              A secure AWS 3-tier architecture demonstrating public and private
+              subnet design, network segmentation, EC2 resources, routing,
+              security groups, and least-privilege access principles.
+            </p>
+
+            <ul class="tags">
+              <li>AWS</li>
+              <li>VPC</li>
+              <li>EC2</li>
+              <li>Security</li>
+              <li>Networking</li>
+            </ul>
+
+            <a
+              href="https://github.com/Bwalkzz31/aws-secure-3tier-vpc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              View Code
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3>AI QA & Data Labeling Evaluation</h3>
+
+            <p class="tech">AI • Quality Assurance • 2026</p>
+
+            <p class="desc">
+              A structured AI quality evaluation sample demonstrating text
+              classification, error identification, response comparison, and
+              written justification using clear rubric-based reasoning.
+            </p>
+
+            <ul class="tags">
+              <li>AI Evaluation</li>
+              <li>QA</li>
+              <li>Data Labeling</li>
+              <li>Rubrics</li>
+            </ul>
+
+            <a
+              href="https://docs.google.com/document/d/17JXRi2JNG3mJ9ILQBsKCWe3PJ0ZKCwWpjTH9bPwe5Qs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              View Sample
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3>Code Review Dashboard</h3>
+
+            <p class="tech">Python • Flask • Quality Review • 2026</p>
+
+            <p class="desc">
+              A Flask-based dashboard for recording code issues, severity
+              levels, recommended fixes, and technical notes through a
+              structured quality-review workflow.
+            </p>
+
             <ul class="tags">
               <li>Flask</li>
               <li>Python</li>
               <li>Dashboard</li>
-              <li>DevOps</li>
+              <li>Quality Review</li>
             </ul>
+
             <a
               href="https://github.com/Bwalkzz31/code---review---dashboard"
               target="_blank"
+              rel="noopener noreferrer"
               class="btn"
-              >View Code</a
             >
-          </div>
+              View Code
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3>Electronics Design Portfolio</h3>
+
+            <p class="tech">KiCad • Simulation • PCB Design • 2026</p>
+
+            <p class="desc">
+              A collection of electronics and logic-design projects featuring
+              schematics, circuit simulation, PCB-oriented planning, technical
+              specifications, and design documentation.
+            </p>
+
+            <ul class="tags">
+              <li>Electronics</li>
+              <li>KiCad</li>
+              <li>Simulation</li>
+              <li>PCB Design</li>
+            </ul>
+
+            <a
+              href="https://github.com/Bwalkzz31/electronics-design-portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              View Code
+            </a>
+          </article>
+
+          <article class="project-card">
+            <h3>Campus Security Risk Assessment</h3>
+
+            <p class="tech">Risk Assessment • Security • Documentation • 2026</p>
+
+            <p class="desc">
+              A campus security project featuring risk identification,
+              security-camera planning, structured documentation, and practical
+              mitigation recommendations.
+            </p>
+
+            <ul class="tags">
+              <li>Risk Assessment</li>
+              <li>Security</li>
+              <li>Documentation</li>
+              <li>Excel</li>
+            </ul>
+
+            <a
+              href="https://github.com/Bwalkzz31/campus-security-risk-assessment"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              View Code
+            </a>
+          </article>
         </div>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
-        <p>If you’d like to connect, collaborate, or talk about roles:</p>
+
+        <p class="contact-intro">
+          I am currently open to remote opportunities in IT support, data
+          analytics, AI quality evaluation, technical operations, and junior
+          software development.
+        </p>
+
         <div class="contact-links">
           <a href="mailto:b.walker.itm@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/bwalker21" target="_blank"
-            >LinkedIn</a
+
+          <a
+            href="https://www.linkedin.com/in/britany-walker-935389246"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-          <a href="https://github.com/Bwalkzz31" target="_blank">GitHub</a>
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/Bwalkzz31"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a href="Britany_Walker_IT_Resume.pdf" target="_blank">
+            Resume
+          </a>
         </div>
       </section>
     </main>
 
-    <a href="#top" class="top-link">↑ Top</a>
+    <a href="#top" class="top-link" aria-label="Return to top">↑ Top</a>
   </body>
 </html>
+'''
+
+out = Path("/mnt/data/index_updated.html")
+out.write_text(html, encoding="utf-8")
+print(out)
